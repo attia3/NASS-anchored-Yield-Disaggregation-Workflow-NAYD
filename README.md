@@ -135,6 +135,19 @@ These files are only for illustration and unit tests; they are not intended as a
 # install.packages(c("sf","terra","dplyr","rgee", ...))
 
 # 1. Initialize Earth Engine
+# Optional: manually point reticulate to the Python env used by rgee
+Sys.setenv(
+  RETICULATE_PYTHON = "~/AppData/Local/r-miniconda/envs/rgee_py311/python.exe"
+)
+library(reticulate)
+py_config()
+
+library(rgee)
+# This installs a miniconda env and earthengine-api into it
+rgee::ee_install()
+# One-time authentication (will open browser)
+rgee::ee_Authenticate()
+# Initialize in your R session (usually once per session)
 rgee::ee_Initialize(drive = TRUE)
 
 # 2. Prepare NASS tables, county shapefile, and CDL mosaics
