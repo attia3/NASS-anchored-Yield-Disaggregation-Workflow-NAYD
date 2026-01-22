@@ -10,6 +10,7 @@ Disaggregates NASS county yield across units using a beta-weighting scheme while
 Clusters harvest units into ~5–10 km production zones.
 Validates segmented yields against independent variety-testing trials.
 Repository structure
+
 R/01_ndvi_et_season.R – NDVI/ET seasonal composites (rgee/OpenET).
 
 R/02_build_spatial_weights.R – CDL mask + NDVI/ET weight generator.
