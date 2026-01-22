@@ -1,7 +1,7 @@
-usda-nass-yield-disaggregating
+NASS-anchored-Yield-Disaggregation-Workflow (NAYD)
 This repository provides an R workflow to disaggregate official, coarse-scale yield statistics (e.g. USDA NASS county yields) to field-scale “harvest units” using a combination of: land-cover / crop-type rasters (e.g. USDA Cropland Data Layer), remote-sensing metrics (NDVI, ET) from Google Earth Engine, and reported area and yield for each administrative unit. The code can be applied to any crop and region where equivalent inputs are available. In the documentation and examples we demonstrate the workflow using winter wheat and cotton in Texas, but the methods are not limited to these crops or locations.
 
-Features
+## Features
 Builds county- and crop-specific masks from USDA Cropland Data Layer (CDL) with consistency checks against NASS planted/harvested areas.
 Derives seasonal NDVI and ET composites from Landsat / OpenET.
 Computes pixel-level weights combining NDVI and ET.
@@ -18,7 +18,7 @@ R/05_cluster_units_5km.R – cluster units into production zones.
 R/06_process_county_year.R – wrapper for one county-year.
 R/07_compute_weights_batch.R – batch weights for many counties/years.
 R/08_run_disagg_clustering.R – main loop + segmentation + export.
-Requirements
+## Requirements
 R >= 4.3
 Packages: sf, terra, dplyr, data.table, ggplot2, rgee, reticulate, readxl, stringr, purrr, viridis, patchwork, etc.
 Google Earth Engine account and rgee configured.
@@ -26,7 +26,7 @@ Access to:
 Texas county boundary shapefile (EPSG:4326)
 CDL mosaics (30 m) for 2008–present, in EPSG:5070
 NASS county-level planted/harvested area and yield tables
-Main features
+## Main features
 Crop-specific masks from CDL
 
 Builds county- and crop-specific masks from CDL
@@ -93,7 +93,7 @@ Convenience loop to build weights across many counties / years, caching intermed
 R/08_run_disagg_clustering.R
 Main driver script: loops over counties × years, calls process_county_year(), and writes out cluster-level yield tables + diagnostic figures.
 
-Demo data (no-Earth-Engine example)
+## Demo data (no-Earth-Engine example)
 The repository ships a small demo dataset under inst/extdata/ to allow testing the workflow without running Google Earth Engine:
 
 inst/extdata/nass_demo.csv
