@@ -11,13 +11,21 @@ Clusters harvest units into ~5–10 km production zones.
 Validates segmented yields against independent variety-testing trials.
 Repository structure
 R/01_ndvi_et_season.R – NDVI/ET seasonal composites (rgee/OpenET).
+
 R/02_build_spatial_weights.R – CDL mask + NDVI/ET weight generator.
+
 R/03_segment_fields_pseudo_units.R – field segmentation and tiling.
+
 R/04_disagg_units_yield_safe.R – NASS-consistent yield assignment to units.
+
 R/05_cluster_units_5km.R – cluster units into production zones.
+
 R/06_process_county_year.R – wrapper for one county-year.
+
 R/07_compute_weights_batch.R – batch weights for many counties/years.
+
 R/08_run_disagg_clustering.R – main loop + segmentation + export.
+
 ## Requirements
 R >= 4.3
 Packages: sf, terra, dplyr, data.table, ggplot2, rgee, reticulate, readxl, stringr, purrr, viridis, patchwork, etc.
