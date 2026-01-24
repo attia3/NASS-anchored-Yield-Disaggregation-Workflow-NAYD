@@ -224,7 +224,7 @@ library(rgee)
 ee_Authenticate()
 ee_Initialize()
 
-nass_csv <- system.file("TX_CO_PLAN_HARV_Y_demo.csv", package="NAYD")  
+nass_csv <- system.file("extdata","TX_CO_PLAN_HARV_Y_demo.csv", package="NAYD")  
 nass_df <- read.csv(nass_csv)
 
 season_start <- "06-01"
