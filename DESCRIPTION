@@ -1,4 +1,4 @@
-Package: NAYD
+Package: nayd
 Title: NASS-anchored Yield Disaggregation Workflow (NAYD)
 Version: 0.0.0.9000
 Authors@R: 
