@@ -390,8 +390,8 @@ prune_harvest_units_by_weight <- function(harvest_units_sf,
   stopifnot("unit_w_sum" %in% names(harvest_units_sf))
   
   df <- harvest_units_sf |>
-    dplyr::arrange(dplyr::desc(rlang::.data$unit_w_sum)) |>
-    dplyr::mutate(cumw = cumsum(rlang::.data$unit_w_sum))
+    dplyr::arrange(dplyr::desc(unit_w_sum)) |>
+    dplyr::mutate(cumw = cumsum(unit_w_sum))
   
   k <- which(df$cumw >= keep_cumw)[1]
   if (is.na(k)) k <- nrow(df)
